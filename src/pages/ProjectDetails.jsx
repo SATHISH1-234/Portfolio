@@ -3,17 +3,17 @@ import { useParams, Link } from "react-router-dom";
 import { FaGamepad, FaCode, FaUnity, FaDesktop } from "react-icons/fa";
 
 // Import project images (keeping for fallback)
-import img1 from "../assets/world.jpg";
-import img2 from "../assets/obsrun.png";
-import img3 from "../assets/world.jpg";
-import img4 from "../assets/world.jpg";
+import img1 from "../assets/img1.jpg";
+import img2 from "../assets/img2.png";
+import img3 from "../assets/img3.png";
+import img4 from "../assets/img4.png";
 
 const projectDetails = {
   img1: {
     title: "Interactive Skill Enhancer For Children With ASD and ID",
     icon: FaGamepad,
     image: img1,
-    videoUrl: "", // Replace with actual project video
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Replace with actual project video
     technologies: ["Unity", "AR/VR"],
     description:
       "An advanced terrain generation system with dynamic biome creation and realistic landscape rendering.",
@@ -140,10 +140,10 @@ function ProjectDetails() {
   return (
     <div className="min-h-screen bg-black font-montserrat text-white">
       {/* Project Details Container */}
-      <div className="container mx-auto px-24 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-24 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
           {/* Project Video */}
-          <div>
+          <div className="w-full order-1 md:order-none">
             <div className="rounded-lg overflow-hidden shadow-2xl aspect-video">
               <iframe
                 width="100%"
@@ -151,26 +151,34 @@ function ProjectDetails() {
                 src={project.videoUrl}
                 title={`${project.title} Video`}
                 frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allow="autoplay; accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
             </div>
           </div>
 
           {/* Project Information */}
-          <div>
-            <div className="flex items-center mb-6">
-              <ProjectIcon className="text-blue-500 mr-4" size={40} />
-              <h1 className="text-4xl font-bold">{project.title}</h1>
+          <div className="order-2 md:order-none px-4 sm:px-8 lg:px-12">
+            <div className="flex flex-col sm:flex-row items-center mb-8 lg:mb-12">
+              <ProjectIcon
+                className="text-blue-500 mb-4 sm:mr-6 sm:mb-0"
+                size={40}
+                md:size={48}
+              />
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center sm:text-left">
+                {project.title}
+              </h1>
             </div>
 
-            <div className="mb-6">
-              <h2 className="text-2xl font-semibold mb-4">Technologies</h2>
-              <div className="flex flex-wrap gap-2">
+            <div className="mb-8 lg:mb-12">
+              <h2 className="text-2xl lg:text-3xl font-semibold mb-4 text-center sm:text-left">
+                Technologies
+              </h2>
+              <div className="flex flex-wrap gap-3 justify-center sm:justify-start">
                 {project.technologies.map((tech, index) => (
                   <span
                     key={index}
-                    className="bg-blue-900 text-blue-300 px-3 py-1 rounded-full text-sm"
+                    className="bg-blue-900 text-blue-300 px-3 py-1.5 rounded-full text-sm md:text-base"
                   >
                     {tech}
                   </span>
@@ -178,15 +186,21 @@ function ProjectDetails() {
               </div>
             </div>
 
-            <div className="mb-6">
-              <h2 className="text-2xl font-semibold mb-4">Description</h2>
-              <p className="text-gray-400">{project.fullDescription}</p>
+            <div className="mb-8 lg:mb-12">
+              <h2 className="text-2xl lg:text-3xl font-semibold mb-4 text-center sm:text-left">
+                Description
+              </h2>
+              <p className="text-base md:text-lg text-gray-300 leading-relaxed text-center sm:text-left">
+                {project.fullDescription}
+              </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-12">
               <div>
-                <h2 className="text-2xl font-semibold mb-4">Challenges</h2>
-                <ul className="list-disc list-inside text-gray-400">
+                <h2 className="text-2xl lg:text-3xl font-semibold mb-4 text-center sm:text-left">
+                  Challenges
+                </h2>
+                <ul className="list-disc list-inside text-gray-300 text-center sm:text-left text-base md:text-lg space-y-2">
                   {project.challenges.map((challenge, index) => (
                     <li key={index}>{challenge}</li>
                   ))}
@@ -194,8 +208,10 @@ function ProjectDetails() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-semibold mb-4">Learnings</h2>
-                <ul className="list-disc list-inside text-gray-400">
+                <h2 className="text-2xl lg:text-3xl font-semibold mb-4 text-center sm:text-left">
+                  Learnings
+                </h2>
+                <ul className="list-disc list-inside text-gray-300 text-center sm:text-left text-base md:text-lg space-y-2">
                   {project.learnings.map((learning, index) => (
                     <li key={index}>{learning}</li>
                   ))}

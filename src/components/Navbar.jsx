@@ -19,24 +19,26 @@ function Navbar() {
   };
 
   return (
-    <nav className="flex justify-between items-center bg-black text-white px-24 py-6 font-montserrat">
-      <div className="ml-16 flex flex-col">
+    <nav className="flex flex-col sm:flex-row justify-between items-center bg-black text-white px-4 sm:px-12 lg:px-24 py-4 sm:py-6 font-montserrat">
+      <div className="flex flex-col items-center sm:items-start mb-4 sm:mb-0">
         <Link
           to="/"
           className="hover:text-blue-400 transition-colors duration-300"
         >
-          <h1 className="text-4xl font-bold mb-2 text-white">Ashish Sakthi</h1>
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-center sm:text-left">
+            Ashish Sakthi
+          </h1>
         </Link>
       </div>
 
-      <div className="flex items-center space-x-8 mr-16">
+      <div className="flex flex-wrap items-center justify-center sm:justify-end space-x-4 sm:space-x-6 lg:space-x-8">
         <a
           href="https://www.linkedin.com/in/iamashishsakthi/"
           target="_blank"
           rel="noopener noreferrer"
           className="text-white hover:text-blue-300 transition-colors duration-300"
         >
-          <FaLinkedin size={32} />
+          <FaLinkedin size={24} sm:size={28} lg:size={32} />
         </a>
         <a
           href="https://github.com/Ashish-Sakthi"
@@ -44,7 +46,7 @@ function Navbar() {
           rel="noopener noreferrer"
           className="text-white hover:text-blue-300 transition-colors duration-300"
         >
-          <FaGithub size={32} />
+          <FaGithub size={24} sm:size={28} lg:size={32} />
         </a>
         <a
           href="https://www.instagram.com/your-username"
@@ -52,13 +54,13 @@ function Navbar() {
           rel="noopener noreferrer"
           className="text-white hover:text-blue-300 transition-colors duration-300"
         >
-          <FaInstagram size={32} />
+          <FaInstagram size={24} sm:size={28} lg:size={32} />
         </a>
         <button
           onClick={handleDownloadResume}
-          className="flex items-center bg-blue-800 hover:bg-blue-900 text-white px-6 py-3 rounded-lg text-lg transition-colors duration-300"
+          className="flex items-center bg-blue-800 hover:bg-blue-900 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-base sm:text-lg transition-colors duration-300"
         >
-          <FaFileDownload className="mr-3" size={24} />
+          <FaFileDownload className="mr-2 sm:mr-3" size={16} sm:size={24} />
           Resume
         </button>
       </div>
