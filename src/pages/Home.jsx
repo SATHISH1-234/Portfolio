@@ -7,7 +7,7 @@ import img1 from "../assets/world.jpg";
 import img2 from "../assets/obsrun.png";
 import img3 from "../assets/world.jpg";
 import img4 from "../assets/world.jpg";
-
+import img from "../assets/profile.jpeg";
 function ProjectCard({
   icon: Icon,
   title,
@@ -95,7 +95,7 @@ function Home() {
           <div className="flex-shrink-0">
             <div className="w-96 h-96 rounded-full overflow-hidden border-8 border-gray-800 shadow-2xl">
               <img
-                src="/src/profile.jpeg"
+                src={img}
                 alt="Ashish Sakthi"
                 className="w-full h-full object-cover object-center"
               />
